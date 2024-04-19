@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+   .notes-card{
+   background: white;
+   opacity: 0.9;
+    padding: 10px;
+    overflow-wrap: break-word;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 0px 0px 30px 10px black;
+   }
+   body{
+  
+    background-image: linear-gradient( 90.7deg,  rgba(0,213,255,1) 2.5%, rgba(79,255,255,1) 97.7% );
+    background-position: center;
+    background-size: cover;
+   }
+    </style>
+</head>
+<main class=" border-2 border-black w-[90%] min-[420px]:w-[70%] min-[650px]:w-[50%] min-[850px]:w-[40%] min-[1150px]:w-[30%] mx-auto my-[100px] px-[20px] rounded-[15px] bg-black opacity-70 text-white shadow-[0_0_30px_10px_rgb(0,0,0)]" id="main-container-input  ">
+
+<body>
+        <form action="" class="">
+            <div id="heading-input-container" class=" flex my-[15px] ">
+                <input type="text" id="input-heading" class="text-black border-2 block w-[85%] border-white 
+                max-[350px]:p-[3px] max-[350px]:text[15px] p-[7px] text-[20px] rounded-[10px] mr-[10px]"
+                    placeholder="Title">
+                <input type="color" name="color" id="note-color" class="border-2 border-white rounded-[10px] block my-auto ">
+            </div>
+            <div id="notes-input-container" class=" my-[15px]">
+                <textarea type="text" id="notes" class="border-2  rounded-[10px] text-black border-white block w-[100%] text-[20px] p-[7px]"
+                    placeholder="Please Add Your Notes Here..." rows="4"></textarea>
+
+            </div>
+            <div id="submit-btn" class=" my-[15px]">
+                <button id="submit" class="border-2 border-white mx-auto block p-[7px] rounded-[10px] text-[20px] hover:bg-white hover:text-black transtition duration-200 ease-in">Add Notes</button>
+            </div>
+        </form>
+    </main>
+
+
+    <div id="notes-result-box" class="mb-[20px] grid grid-cols-1 min-[450px]:grid-cols-2 min-[600px]:grid-cols-3  w-[95%] min-[1100px]:w-[85%] gap-[10px] min-[650px]:gap-[20px] mx-auto">
+        <div class="notes-card hidden " >
+            <p class="notes-title-output border-2 border-black ">Title</p>
+            <p class="notes-output border-2 border-black">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, aut.</p>
+            <button  class="border-2 border-black notes-delete-btn rounded-[10px]" >Delete</button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="script.js">
+       
+      
+    </script>
+</body>
+
+</html>
