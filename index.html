@@ -7,51 +7,83 @@
     <title>Sticky Notes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-   .notes-card{
-   background: white;
-   opacity: 0.9;
-    padding: 10px;
-    word-wrap: break-word;
-    border-radius: 10px;
-    border: 2px solid black;
-    box-shadow: 0px 0px 30px 10px black;
-   }
-   body{
-  
-    background-image: linear-gradient( 90.7deg,  rgba(0,213,255,1) 2.5%, rgba(79,255,255,1) 97.7% );
-    background-position: center;
-    background-size: cover;
-   }
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Patrick+Hand&family=Playfair+Display&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+        .notes-card {
+            background: white;
+            opacity: 0.9;
+            padding: 10px;
+            word-wrap: break-word;
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 30px 10px black;
+        }
+
+        body {
+            letter-spacing: 2px;
+            font-family: 'Patrick hand';
+            background-image: linear-gradient(90.7deg, rgba(0, 213, 255, 1) 2.5%, rgba(79, 255, 255, 1) 97.7%);
+            background-position: center;
+            background-size: cover;
+        }
     </style>
 </head>
-<main class=" border-2 border-black w-[90%] min-[420px]:w-[70%] min-[650px]:w-[50%] min-[850px]:w-[40%] min-[1150px]:w-[30%] mx-auto my-[100px] px-[20px] rounded-[15px] bg-black opacity-70 text-white shadow-[0_0_30px_10px_rgb(0,0,0)]" id="main-container-input  ">
 
-<body>
-        <form action="" class="">
+<body class="relative">
+
+
+    <nav id="navBar" class="text-white text-center py-[10px] bg-black opacity-70 fixed top-0 w-[100%] z-[100]">
+        <h1 class="text-[20px] min-[350px]:text-[25px] min-[350px]:text-[30px] font-bold ">To-Do List Application</h1>
+    </nav>
+    <main
+        class=" border-2 border-black w-[90%] min-[420px]:w-[70%] min-[650px]:w-[50%] min-[850px]:w-[40%] min-[1150px]:w-[30%] mx-auto my-[100px] px-[20px] rounded-[15px] bg-black opacity-70 text-white shadow-[0_0_30px_10px_rgb(0,0,0)]"
+        id="main-container-input">
+
+
+        <form action=""  class="form">
+
             <div id="heading-input-container" class=" flex my-[15px] ">
-                <input type="text" id="input-heading" class="text-black border-2 block w-[85%] border-white 
-                max-[350px]:p-[3px] max-[350px]:text[15px] p-[7px] text-[20px] rounded-[10px] mr-[10px]"
+                <input type="text" id="input-heading" class="text-black  block w-[85%]  
+                max-[350px]:p-[3px] max-[350px]:text[15px] p-[7px] text-[20px] rounded-[10px] mx-auto" required
                     placeholder="Title">
-                <input type="color" name="color" id="note-color" class="border-2 border-white rounded-[10px] block my-auto ">
             </div>
-            <div id="notes-input-container" class=" my-[15px]">
-                <textarea type="text" id="notes" class="border-2  rounded-[10px] text-black border-white block w-[100%] text-[20px] p-[7px]"
-                    placeholder="Please Add Your Notes Here..." rows="4"></textarea>
 
+            <div id="color-picker-box"
+                class="mx-auto w-[95%] bg-white text-black rounded-[10px] max-[350px]:text-center min-[350px]:flex justify-center font-semibold py-[10px]">
+                <label for="note-color" class="block max-[700px]:text[15px] text-[20px] mr-[10px]">Pick note
+                    Color:</label>
+                <input type="color" name="color" id="note-color" class="border-2 border-black" required>
             </div>
+
+            <div id="notes-input-container" class=" my-[15px]">
+                <textarea type="text" id="notes"
+                    class="bg-white rounded-[10px] text-black  block w-[100%] text-[20px] p-[7px]"
+                    placeholder="Please Add Your Notes Here..." rows="4" required></textarea>
+            </div>
+
+            <div id="date-box" class="my-[15px]">
+                <input type="date" id="date-ip" class="text-black block w-[85%] mx-auto  
+                max-[350px]:p-[3px] max-[350px]:text[15px] p-[7px] text-[20px] rounded-[10px] " required>
+            </div>
+
             <div id="submit-btn" class=" my-[15px]">
-                <button id="submit" class="border-2 border-white mx-auto block p-[7px] rounded-[10px] text-[20px] hover:bg-white hover:text-black transtition duration-200 ease-in">Add Notes</button>
+                <button id="submit"
+                    class="border-2 border-white mx-auto block p-[7px] rounded-[10px] text-[20px] hover:bg-white hover:text-black transtition duration-200 ease-in">Add
+                    Notes</button>
             </div>
+
         </form>
     </main>
 
 
-    <div id="notes-result-box" class="mb-[20px] grid grid-cols-1 min-[450px]:grid-cols-2 min-[600px]:grid-cols-3  w-[95%] min-[1100px]:w-[85%] gap-[10px] min-[650px]:gap-[20px] mx-auto">
-        <div class="notes-card hidden " >
+    <div id="notes-result-box"
+        class="mb-[20px] grid grid-cols-1 min-[450px]:grid-cols-2 min-[700px]:grid-cols-3  w-[95%] min-[1100px]:w-[85%] gap-[10px] min-[650px]:gap-[20px] mx-auto">
+        <!-- <div class="notes-card hidden " >
             <p class="notes-title-output border-2 border-black ">Title</p>
             <p class="notes-output border-2 border-black">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, aut.</p>
             <button  class="border-2 border-black notes-delete-btn rounded-[10px]" >Delete</button>
-        </div>
+        </div> -->
     </div>
 
 
@@ -60,8 +92,8 @@
 
 
     <script src="script.js">
-       
-      
+
+
     </script>
 </body>
 
